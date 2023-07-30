@@ -1,0 +1,15 @@
+.tabela {
+    border-width: 3px;
+    border-style: solid;
+    text-align: center;
+
+}
+
+.header {
+    background-color: azure;
+}
+
+.naslov{
+   color : blueviolet;  
+   
+}

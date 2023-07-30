@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Dodaj</title>
+    </h:head>
+    <h:body>
+        <h2>Dodavanje kandidata</h2>
+        <h:form>
+            <h:panelGrid columns="3">
+                Broj prijave:
+                <h:inputText id="idbp" value="#{controler.noviKandidat.brojprijave}"/>
+                <h:message for="idbp" styleClass="errorMessage" />
+                Ime:
+                <h:inputText id="idime" value="#{controler.noviKandidat.ime}" required="true" requiredMessage="ime je obavezano"/>
+                <h:message for="idime" styleClass="errorMessage" />
+                Prezime:
+                <h:inputText id="idpime" value="#{controler.noviKandidat.prezime}" required="true" requiredMessage="prezime je obavezno"/>
+                <h:message for="idpime" styleClass="errorMessage" />
+                Prosek 1. razreda:
+                <h:inputText id="idp1" value="#{controler.noviKandidat.prosekprvi}"/>
+                <h:message for="idp1" styleClass="errorMessage" />
+                Prosek 2. razreda:
+                <h:inputText id="idp2" value="#{controler.noviKandidat.prosekdrugi}"/>
+                <h:message for="idp2" styleClass="errorMessage" />
+                Prosek 3. razreda:
+                <h:inputText id="idp3" value="#{controler.noviKandidat.prosektreci}"/>
+                <h:message for="idp3" styleClass="errorMessage" />
+                Prosek 4. razreda:
+                <h:inputText id="idp4" value="#{controler.noviKandidat.prosekcetvrti}"/>
+                <h:message for="idp4" styleClass="errorMessage" />
+                Prijemni:
+                <h:inputText id="idprijemni" value="#{controler.noviKandidat.prijemni}"/>
+                <h:message for="idprijemni" styleClass="errorMessage" />
+                Srednja:
+                <h:selectOneMenu id="idskola" value="#{controler.noviKandidat.srednja}" required="true" requiredMessage="izaberi skolu">
+                    <f:selectItems value="#{controler.srednjeSkole}"/>
+                </h:selectOneMenu> 
+                <h:message for="idskola" styleClass="errorMessage" />
+                <h:commandButton action="#{controler.dodaj()}" value="Sacuvaj"/>
+                <h:commandLink value="ranglista" action="ranglista" immediate="true"/>
+            </h:panelGrid>
+            <br/>
+            <h:commandButton value="Izloguj se" action="#{controler.signOut()}" immediate="true"/>   
+        </h:form>
+    </h:body>
+</html>
+
